@@ -1,0 +1,27 @@
+import re
+import csv
+import random
+#import sys
+import D_ip
+
+def test_ip():
+    with open('ips.csv')as f:
+        f_csv = csv.reader(f)
+        ip = {}
+        x = 1
+        for row in f_csv:
+            ip["{0}T".format(x)] = row[0]
+            ip["{0}".format(x)] = row[1]
+            x += 1
+        i = len(ip) / 2
+        print(i)
+        ii = random.randint(1, i)
+        print(ii)
+        print(ip["{0}T".format(ii)] + ip["{0}".format(ii)])
+
+def main():
+    test_ip()
+
+if __name__ == '__main__':
+    D_ip = D_ip.main()
+    main()
